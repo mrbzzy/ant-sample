@@ -23,3 +23,8 @@ jobs:
         distribution: 'adopt'
     - name: Build with Ant
       run: ant -noinput -buildfile build.xml
+    - name: upload Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: ant-poc
+        path: '${{ github.workspace }}/target/*.jar'
